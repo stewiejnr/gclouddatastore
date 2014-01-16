@@ -1,8 +1,17 @@
 import os.path
+import os,sys
+
+
+##fixes ImportError: No module named gclouddatastore
+a = os.getcwd().split('/') #python magic
+b = ','.join(a)         
+b = b.replace(',','/')
+# Adds the path of gclouddatastore to the system path
+sys.path.append(b)
 
 import gclouddatastore
 from gclouddatastore.key import Key
-
+ 
 
 DATASET_ID = 'jgatsby-storage'
 CLIENT_EMAIL = '29903432081-2qogb45k5olu0j3b7rebktohkm2ncv2b@developer.gserviceaccount.com'
